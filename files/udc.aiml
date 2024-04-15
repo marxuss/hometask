@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <category>
+        <pattern>*</pattern>
+        <template>Hello! Welcome to SPORTLAND week where NHL and NBA teams fighting to be the weeks best! Before we proceed, could you please tell me your name? The template is: My name is "your name".</template>
+    </category>
+
+    <category>
+        <pattern>My name is *</pattern>
+        <template>
+            <think>
+                <set name="name"><star/></set>
+            </think>
+            Nice to meet you, <get name="name"/>! Are you interested in NHL or NBA games? Please specify "NHL" or "NBA".
+        </template>
+    </category>
+
+    <category>
+        <pattern>NHL</pattern>
+        <template>
+            <think>
+                <set name="league">NHL</set>
+            </think>
+            Great! I can help you with NHL tickets. What is your game day? The template is: My game day is "day name".
+        </template>
+    </category>
+
+    <category>
+        <pattern>NBA</pattern>
+        <template>
+            <think>
+                <set name="league">NBA</set>
+            </think>
+            Wonderful! I can assist you with NBA tickets. What is your game day? The template is: My game day is "day name".
+        </template>
+    </category>
+
+    <category>
+        <pattern>My game day is *</pattern>
+        <template>
+            <think>
+                <set name="day"><star/></set>
+            </think>
+            <condition name="league">
+                <li value="NHL">
+                    <condition name="day">
+                        <li value="Monday">Games for Monday (NHL):
+                            <ul>
+                                <li>Game 1: Boston Bruins vs. Montreal Canadiens at 1:00 PM</li>
+                                <li>Game 2: Toronto Maple Leafs vs. Tampa Bay Lightning at 3:00 PM</li>
+                                <li>Game 3: New York Rangers vs. Philadelphia Flyers at 5:00 PM</li>
+                                <li>Game 4: Chicago Blackhawks vs. St. Louis Blues at 7:00 PM</li>
+                                <li>Game 5: Vancouver Canucks vs. Seattle Kraken at 9:00 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number. Template: Game number is "number"
+                        </li>
+                        <li value="Tuesday">Games for Tuesday (NHL):
+                            <ul>
+                                <li>Game 1: Colorado Avalanche vs. Vegas Golden Knights at 1:00 PM</li>
+                                <li>Game 2: Edmonton Oilers vs. Calgary Flames at 3:00 PM</li>
+                                <li>Game 3: Detroit Red Wings vs. Pittsburgh Penguins at 5:00 PM</li>
+                                <li>Game 4: San Jose Sharks vs. Los Angeles Kings at 7:00 PM</li>
+                                <li>Game 5: Washington Capitals vs. New Jersey Devils at 9:00 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number. Template: Game number is "number"
+                        </li>
+                        <li value="Wednesday">Games for Wednesday (NHL):
+                            <ul>
+                                <li>Game 1: Minnesota Wild vs. Nashville Predators at 12:00 PM</li>
+                                <li>Game 2: Ottawa Senators vs. Buffalo Sabres at 2:30 PM</li>
+                                <li>Game 3: Florida Panthers vs. Carolina Hurricanes at 5:00 PM</li>
+                                <li>Game 4: Winnipeg Jets vs. Arizona Coyotes at 7:30 PM</li>
+                                <li>Game 5: Columbus Blue Jackets vs. New York Islanders at 10:00 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number. Template: Game number is "number"
+                        </li>
+                        <li value="Thursday">Games for Thursday (NHL):
+                            <ul>
+                                <li>Game 1: Dallas Stars vs. Anaheim Ducks at 12:30 PM</li>
+                                <li>Game 2: Montreal Canadiens vs. Boston Bruins at 3:00 PM</li>
+                                <li>Game 3: Philadelphia Flyers vs. New York Rangers at 5:30 PM</li>
+                                <li>Game 4: Calgary Flames vs. Edmonton Oilers at 8:00 PM</li>
+                                <li>Game 5: San Jose Sharks vs. Vancouver Canucks at 10:30 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number. Template: Game number is "number"
+                        </li>
+                        <li value="Friday">Games for Friday (NHL):
+                            <ul>
+                                <li>Game 1: Tampa Bay Lightning vs. Florida Panthers at 1:15 PM</li>
+                                <li>Game 2: Toronto Maple Leafs vs. Ottawa Senators at 4:00 PM</li>
+                                <li>Game 3: Los Angeles Kings vs. Anaheim Ducks at 6:45 PM</li>
+                                <li>Game 4: Colorado Avalanche vs. Detroit Red Wings at 8:30 PM</li>
+                                <li>Game 5: Seattle Kraken vs. Vegas Golden Knights at 11:00 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number. Template: Game number is "number"
+                        </li>
+                        <li value="Saturday">Games for Saturday (NHL):
+                            <ul>
+                                <li>Game 1: New York Islanders vs. New Jersey Devils at 12:00 PM</li>
+                                <li>Game 2: Chicago Blackhawks vs. St. Louis Blues at 2:00 PM</li>
+                                <li>Game 3: Washington Capitals vs. Pittsburgh Penguins at 4:00 PM</li>
+                                <li>Game 4: Nashville Predators vs. Columbus Blue Jackets at 6:00 PM</li>
+                                <li>Game 5: Minnesota Wild vs. Winnipeg Jets at 7:30 PM</li>
+                                <li>Game 6: Calgary Flames vs. Vancouver Canucks at 9:00 PM</li>
+                                <li>Game 7: Los Angeles Kings vs. San Jose Sharks at 10:30 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number.
+                        </li>
+                        <li value="Sunday">Games for Sunday (NHL):
+                            <ul>
+                                <li>Game 1: Philadelphia Flyers vs. Boston Bruins at 1:00 PM</li>
+                                <li>Game 2: Montreal Canadiens vs. Toronto Maple Leafs at 3:15 PM</li>
+                                <li>Game 3: Detroit Red Wings vs. Buffalo Sabres at 5:30 PM</li>
+                                <li>Game 4: Colorado Avalanche vs. Dallas Stars at 7:00 PM</li>
+                                <li>Game 5: Arizona Coyotes vs. Vegas Golden Knights at 8:45 PM</li>
+                                <li>Game 6: Edmonton Oilers vs. Calgary Flames at 10:00 PM</li>
+                                <li>Game 7: Seattle Kraken vs. Vancouver Canucks at 11:30 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number. Template: Game number is "number"
+                        </li>
+                    </condition>
+
+                </li>
+                <li value="NBA">
+                    <condition name="day">
+                        <li value="Monday">Games for Monday (NBA):
+                            <ul>
+                                <li>Game 1: Los Angeles Lakers vs. Golden State Warriors at 8:00 PM</li>
+                                <li>Game 2: New York Knicks vs. Brooklyn Nets at 7:30 PM</li>
+                                <li>Game 3: Miami Heat vs. Orlando Magic at 6:00 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number. Template: Game number is "number"
+                        </li>
+                        <li value="Tuesday">Games for Tuesday (NBA):
+                            <ul>
+                                <li>Game 1: Chicago Bulls vs. Cleveland Cavaliers at 8:00 PM</li>
+                                <li>Game 2: Toronto Raptors vs. Detroit Pistons at 7:00 PM</li>
+                                <li>Game 3: Atlanta Hawks vs. Charlotte Hornets at 7:30 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number. Template: Game number is "number"
+                        </li>
+                        <li value="Wednesday">Games for Wednesday (NBA):
+                            <ul>
+                                <li>Game 1: Philadelphia 76ers vs. Boston Celtics at 7:00 PM</li>
+                                <li>Game 2: Indiana Pacers vs. Milwaukee Bucks at 8:00 PM</li>
+                                <li>Game 3: Washington Wizards vs. Atlanta Hawks at 8:30 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number. Template: Game number is "number"
+                        </li>
+                        <li value="Thursday">Games for Thursday (NBA):
+                            <ul>
+                                <li>Game 1: San Antonio Spurs vs. Memphis Grizzlies at 8:00 PM</li>
+                                <li>Game 2: Orlando Magic vs. Miami Heat at 7:00 PM</li>
+                                <li>Game 3: Toronto Raptors vs. Philadelphia 76ers at 7:30 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number. Template: Game number is "number"
+                        </li>
+                        <li value="Friday">Games for Friday (NBA):
+                            <ul>
+                                <li>Game 1: Minnesota Timberwolves vs. Denver Nuggets at 9:00 PM</li>
+                                <li>Game 2: Phoenix Suns vs. Los Angeles Clippers at 10:30 PM</li>
+                                <li>Game 3: Golden State Warriors vs. Portland Trail Blazers at 10:00 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number. Template: Game number is "number"
+                        </li>
+                        <li value="Saturday">Games for Saturday (NBA):
+                            <ul>
+                                <li>Game 1: Dallas Mavericks vs. San Antonio Spurs at 8:30 PM</li>
+                                <li>Game 2: Indiana Pacers vs. Cleveland Cavaliers at 7:00 PM</li>
+                                <li>Game 3: Brooklyn Nets vs. New York Knicks at 7:30 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number. Template: Game number is "number"
+                        </li>
+                        <li value="Sunday">Games for Sunday (NBA):
+                            <ul>
+                                <li>Game 1: Boston Celtics vs. Toronto Raptors at 3:00 PM</li>
+                                <li>Game 2: Orlando Magic vs. Charlotte Hornets at 1:00 PM</li>
+                                <li>Game 3: Washington Wizards vs. Philadelphia 76ers at 6:00 PM</li>
+                            </ul>
+                            Which game would you like to attend? Please specify the game number. Template: Game number is "number"
+                        </li>
+                    </condition>
+
+                </li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>Game number is *</pattern>
+        <template>
+            Great, you've chosen Game Number <star/>. Here are the ticket categories available for this game:
+            <ul>
+                <li>$50 Ticket - Basic seating</li>
+                <li>$150 Ticket - Premium seating</li>
+                <li>$250 Ticket - VIP seating with complementary refreshments</li>
+            </ul>
+            Which ticket category would you prefer? Please specify the price and number of tickets. Template: " " dollar ticket and "number of tickets"
+        </template>
+    </category>
+
+    <category>
+        <pattern>* dollar ticket and *</pattern>
+        <template>
+            <random>
+                
+                    <li>Congratulations! You've also received a 10% discount on your purchase.
+                    Your invoice: <set name="invoice">(<star index="1"/> * <star index="2"/> * 0.90)</set> dollars.
+                    
+                    </li>
+                    <li>Lucky you! A 15% discount has been applied to your ticket.
+                    Your invoice: <set name="invoice">(<star index="1"/> * <star index="2"/> * 0.85)</set> dollars.
+                    </li>
+                    <li>Great news! You qualify for a 5% discount on this ticket.
+                    Your invoice: <set name="invoice">(<star index="1"/> * <star index="2"/> * 0.95)</set> dollars.
+                    </li>
+            </random>
+            Please provide your email address to send the invoice and confirm your discount. The template is: My email is "your email".
+        </template>
+    </category>
+
+    <category>
+        <pattern>My email is *</pattern>
+        <template>
+            Thank you! I've noted your email address as <star/>. An invoice with total amount:<get name="invoice"/> will be sent to this address shortly. <get name="name"/>, is there any other questions about SPORTLAND week?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>Yes</pattern>
+        <template>
+            Great. Are you interested in NHL or NBA games? Please specify "NHL" or "NBA".
+        </template>
+    </category>
+    
+    <category>
+        <pattern>No</pattern>
+        <template>
+            Thank you and see you in SPORTLAND week!
+        </template>
+    </category>
+
+
+</aiml>
